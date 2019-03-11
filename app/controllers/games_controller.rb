@@ -3,11 +3,13 @@ class GamesController < ApplicationController
   end
 
   def show
+    @game = Game.find_by(id: params[:id])
+    render json: @game, status: 200
   end
 
   def create
     @game = Game.create(params)
-    render json: @game
+    render json: @game, status: 201
   end
 
   def update

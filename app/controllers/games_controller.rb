@@ -27,6 +27,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:id, :state)
+    params.fetch(:game, {}).permit(:id, :state)
   end
 end

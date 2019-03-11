@@ -6,7 +6,8 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new()
+    @game = Game.new(params)
+    render json: @game
   end
 
   def update

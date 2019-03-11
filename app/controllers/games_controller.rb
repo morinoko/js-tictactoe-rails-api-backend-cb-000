@@ -6,8 +6,15 @@ class GamesController < ApplicationController
   end
 
   def create
+    @game = Game.new()
   end
 
   def update
+  end
+
+  private
+
+  def game_params
+    params.require(:game).permit(:state)
   end
 end
